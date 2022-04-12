@@ -68,7 +68,7 @@ class RegisterUserViewController: UIViewController {
         view.addSubview(myActivityIndicator)
         
         //create http request
-        let myUrl = URL(string: "https://9f58-196-96-181-165.ngrok.io/api/users/register")
+        let myUrl = URL(string: "https://1057-41-81-148-175.ngrok.io/api/users/register")
         var request = URLRequest(url: myUrl!)
         request.httpMethod = "POST" //compose a query string
         request.addValue("application/json", forHTTPHeaderField: "content-type")

@@ -53,7 +53,7 @@ class SignInViewController: UIViewController {
         view.addSubview(myActivityIndicator)
         
         //create http request
-        let myUrl = URL(string: "https://9f58-196-96-181-165.ngrok.io/api/users/login")
+        let myUrl = URL(string: "https://1057-41-81-148-175.ngrok.io/api/users/login")
         
         var request = URLRequest(url: myUrl!)
         request.httpMethod = "POST" //compose a query string
@@ -97,21 +97,33 @@ class SignInViewController: UIViewController {
                 
                 if let parseJSON = json{
                     //if parseJSON is not empty
+                    let success = parseJSON["success"] as? Bool
+                    let message = parseJSON["message"] as? String
+                    
+                    
+                    if(success == false){
+                        self.displayMessage(userMessage: "Request was unsuccessful \n \(String(describing: message!))")
+                                    return
+                    }
+                    
                     let accessToken = parseJSON["token"] as? String
                     let userID = parseJSON["id"] as? String
-                    
                     print("Access Token = \(String(describing: accessToken!))")
                     
-                    if(accessToken?.isEmpty)!{
-                        self.displayMessage(userMessage: "Request was unsuccessful")
-                        return
-                    }
                         //navigate to home page
                         DispatchQueue.main.async {
                             let homePage = self.storyboard?.instantiateViewController(withIdentifier: "HomePageViewController") as! HomePageViewController
                             
                             let appDelegate = UIApplication.shared.delegate
                             appDelegate?.window??.rootViewController = homePage
+                            
+                            UIApplication.shared.windows.first?.rootViewController = homePage
+                            
+                            UIApplication.shared.windows.first?.makeKeyAndVisible()
+                            
+                            
+                            
+
                         }
                         //store value in keychain
                         //DONE LATER
