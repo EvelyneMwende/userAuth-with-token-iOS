@@ -18,6 +18,8 @@
 		6C48173D27FEC8F600671C1A /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C48173C27FEC8F600671C1A /* SignInViewController.swift */; };
 		6C48173F27FED1A500671C1A /* RegisterUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C48173E27FED1A500671C1A /* RegisterUserViewController.swift */; };
 		6C48174127FED53B00671C1A /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C48174027FED53B00671C1A /* HomePageViewController.swift */; };
+		6CD0D30228069BC000185DBF /* RoutesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD0D30128069BC000185DBF /* RoutesTableViewCell.swift */; };
+		6CD0D3062806A17300185DBF /* RouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD0D3052806A17300185DBF /* RouteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		6C48173C27FEC8F600671C1A /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		6C48173E27FED1A500671C1A /* RegisterUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserViewController.swift; sourceTree = "<group>"; };
 		6C48174027FED53B00671C1A /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
+		6CD0D30128069BC000185DBF /* RoutesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesTableViewCell.swift; sourceTree = "<group>"; };
+		6CD0D3052806A17300185DBF /* RouteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,8 @@
 				6C48173C27FEC8F600671C1A /* SignInViewController.swift */,
 				6C48173E27FED1A500671C1A /* RegisterUserViewController.swift */,
 				6C48174027FED53B00671C1A /* HomePageViewController.swift */,
+				6CD0D30128069BC000185DBF /* RoutesTableViewCell.swift */,
+				6CD0D3052806A17300185DBF /* RouteViewController.swift */,
 			);
 			path = UserAuth;
 			sourceTree = "<group>";
@@ -92,7 +98,6 @@
 				6012AE70992A4D0534ACDC9D /* Pods-UserAuth.debug.xcconfig */,
 				35B5C66EB5C56A534D212DD1 /* Pods-UserAuth.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -220,9 +225,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C48172A27FEAD2200671C1A /* ViewController.swift in Sources */,
+				6CD0D30228069BC000185DBF /* RoutesTableViewCell.swift in Sources */,
 				6C48174127FED53B00671C1A /* HomePageViewController.swift in Sources */,
 				6C48172627FEAD2200671C1A /* AppDelegate.swift in Sources */,
 				6C48173027FEAD2200671C1A /* UserAuth.xcdatamodeld in Sources */,
+				6CD0D3062806A17300185DBF /* RouteViewController.swift in Sources */,
 				6C48173D27FEC8F600671C1A /* SignInViewController.swift in Sources */,
 				6C48173F27FED1A500671C1A /* RegisterUserViewController.swift in Sources */,
 				6C48172827FEAD2200671C1A /* SceneDelegate.swift in Sources */,

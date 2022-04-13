@@ -44,6 +44,8 @@ class HomePageViewController: UIViewController {
         loadMemberProfile()
         
     }
+
+    
     
     func loadMemberProfile(){
         //READ Access token and User ID from KEYCHAIN

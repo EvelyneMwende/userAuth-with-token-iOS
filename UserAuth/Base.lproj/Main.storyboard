@@ -224,6 +224,7 @@
         <!--Home Page View Controller-->
         <scene sceneID="yen-vc-aIO">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M2D-lr-Hdz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="HomePageViewController" id="PJn-Wg-mU3" customClass="HomePageViewController" customModule="UserAuth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rPy-xO-N98">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -236,6 +237,11 @@
                                         <barButtonItem key="leftBarButtonItem" title="Sign Out" id="4ze-Tj-bQD">
                                             <connections>
                                                 <action selector="signOutButtonTapped:" destination="PJn-Wg-mU3" id="EkS-Vx-aVK"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Routes" id="Cob-wu-xlC">
+                                            <connections>
+                                                <segue destination="w1Q-lN-EEF" kind="show" id="sI1-G2-gZp"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -297,15 +303,31 @@
                             <constraint firstItem="X2n-x3-Vf8" firstAttribute="top" secondItem="NwB-Bn-BMc" secondAttribute="bottom" constant="23" id="vXB-Dz-rJS"/>
                         </constraints>
                     </view>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="userEmailLabel" destination="NwB-Bn-BMc" id="W42-ol-zCn"/>
                         <outlet property="userFullNameLabel" destination="4Td-4I-Rz5" id="B7k-1E-4fr"/>
                         <outlet property="userPhoneNumberLabel" destination="X2n-x3-Vf8" id="U2a-Yh-yLx"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="M2D-lr-Hdz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1462.3188405797102" y="84.375"/>
+        </scene>
+        <!--Route View Controller-->
+        <scene sceneID="CoG-82-Mso">
+            <objects>
+                <viewController storyboardIdentifier="RouteViewController" id="w1Q-lN-EEF" customClass="RouteViewController" customModule="UserAuth" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oR0-YO-uqe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Fw0-eE-D9t"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ntt-sI-jqa"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fpV-5q-G4B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2253.6231884057975" y="83.705357142857139"/>
         </scene>
     </scenes>
     <resources>
