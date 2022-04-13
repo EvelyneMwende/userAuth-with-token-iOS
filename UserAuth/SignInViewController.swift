@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftKeychainWrapper
 
 class SignInViewController: UIViewController {
 
@@ -53,7 +54,7 @@ class SignInViewController: UIViewController {
         view.addSubview(myActivityIndicator)
         
         //create http request
-        let myUrl = URL(string: "https://1057-41-81-148-175.ngrok.io/api/users/login")
+        let myUrl = URL(string: "https://hidden-journey-35693.herokuapp.com/api/users/login")
         
         var request = URLRequest(url: myUrl!)
         request.httpMethod = "POST" //compose a query string
@@ -105,10 +106,19 @@ class SignInViewController: UIViewController {
                         self.displayMessage(userMessage: "Request was unsuccessful \n \(String(describing: message!))")
                                     return
                     }
-                    
+                    //if success is true
                     let accessToken = parseJSON["token"] as? String
                     let userID = parseJSON["id"] as? String
                     print("Access Token = \(String(describing: accessToken!))")
+                    print("User ID = \(String(describing: userID!))")
+                    
+                    //STORE TOKEN value in iOS Keychain
+                    let saveAccessToken: Bool = KeychainWrapper.standard.set(accessToken!, forKey: "accessToken")
+                    
+                    let saveUserId: Bool = KeychainWrapper.standard.set(userID!, forKey: "userId")
+                    
+                    print("The access token save result: \(saveAccessToken)")
+                    print("The user ID save result: \(saveUserId)")
                     
                         //navigate to home page
                         DispatchQueue.main.async {
@@ -121,12 +131,9 @@ class SignInViewController: UIViewController {
                             
                             UIApplication.shared.windows.first?.makeKeyAndVisible()
                             
-                            
-                            
 
                         }
-                        //store value in keychain
-                        //DONE LATER
+                        
                         
                     
                 } else{

@@ -7,14 +7,37 @@
 
 import UIKit
 import CoreData
+import SwiftKeychainWrapper
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //READ ACCESS TOKEN FROM KEY CHAIN
+      /**
+       let accessToken: String? = KeychainWrapper.standard.string(forKey: "accessToken")
+        print("Token: \(String(describing: accessToken!))")
+        
+        
+        if accessToken != nil {
+            //Take user to homepage
+            //NOT NAVIGATINGGG!!!!
+            let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let homePage = mainStoryboard.instantiateViewController(withIdentifier: "HomePageViewController") as! HomePageViewController
+            
+            UIApplication.shared.windows.first?.rootViewController = homePage
+            
+            UIApplication.shared.windows.first?.makeKeyAndVisible()
+            
+//            self.window?.rootViewController = homePage
+        }
+       
+       **/
+        
         return true
     }
 
