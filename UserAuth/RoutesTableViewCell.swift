@@ -31,14 +31,14 @@ class RoutesTableViewCell: UITableViewCell {
     private let entryTitleLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.font = .systemFont(ofSize: 18, weight: .semibold)
+        label.font = .systemFont(ofSize: 15, weight: .semibold)
         return label
     }()
     
     private let exitTitleLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.font = .systemFont(ofSize: 18 , weight: .semibold)
+        label.font = .systemFont(ofSize: 15 , weight: .semibold)
         return label
     }()
     

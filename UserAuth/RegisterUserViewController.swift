@@ -29,6 +29,12 @@ class RegisterUserViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func logInButtonTapped(_ sender: Any) {
+        print("Log In button tapped")
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func signUpButtonTapped(_ sender: Any) {
         print("Sign up button tapped")
         

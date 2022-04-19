@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -30,7 +31,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3eg-go-Q1h">
                                 <rect key="frame" x="20" y="265" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugC-f2-1I7">
                                 <rect key="frame" x="20" y="774" width="374" height="31"/>
@@ -128,7 +129,7 @@
                                     <constraint firstAttribute="height" constant="34" id="cex-3B-4O1"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password Confirm" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="7ia-7g-hpp">
                                 <rect key="frame" x="20" y="459" width="374" height="34"/>
@@ -136,7 +137,7 @@
                                     <constraint firstAttribute="height" constant="34" id="aOz-87-Yvs"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jup-3f-dx4">
                                 <rect key="frame" x="20" y="539" width="374" height="45"/>
@@ -173,6 +174,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Already Have an Account? Log in"/>
+                                <connections>
+                                    <action selector="logInButtonTapped:" destination="1NG-tw-EQC" eventType="touchUpInside" id="fuo-vA-GUQ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zbU-AA-9Un"/>
@@ -224,7 +228,6 @@
         <!--Home Page View Controller-->
         <scene sceneID="yen-vc-aIO">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="M2D-lr-Hdz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="HomePageViewController" id="PJn-Wg-mU3" customClass="HomePageViewController" customModule="UserAuth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rPy-xO-N98">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -241,7 +244,7 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Routes" id="Cob-wu-xlC">
                                             <connections>
-                                                <segue destination="w1Q-lN-EEF" kind="show" id="sI1-G2-gZp"/>
+                                                <segue destination="GIh-rB-Itj" kind="showDetail" id="e9l-uc-WpP"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -310,22 +313,47 @@
                         <outlet property="userPhoneNumberLabel" destination="X2n-x3-Vf8" id="U2a-Yh-yLx"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M2D-lr-Hdz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1462.3188405797102" y="84.375"/>
         </scene>
-        <!--Route View Controller-->
+        <!--ROUTES-->
         <scene sceneID="CoG-82-Mso">
             <objects>
                 <viewController storyboardIdentifier="RouteViewController" id="w1Q-lN-EEF" customClass="RouteViewController" customModule="UserAuth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oR0-YO-uqe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bJa-GJ-itp">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </navigationBar>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Fw0-eE-D9t"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Ntt-sI-jqa"/>
+                    <navigationItem key="navigationItem" title="ROUTES" id="Ntt-sI-jqa"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fpV-5q-G4B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3163.7681159420295" y="83.705357142857139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zmi-Qz-3b3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GIh-rB-Itj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="y1M-tV-Eg2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="w1Q-lN-EEF" kind="relationship" relationship="rootViewController" id="bKH-x6-lCk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6HR-LT-eIA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2253.6231884057975" y="83.705357142857139"/>
         </scene>

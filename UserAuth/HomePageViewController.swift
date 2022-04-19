@@ -45,6 +45,11 @@ class HomePageViewController: UIViewController {
         
     }
 
+//    @IBAction func routesButtonTapped(_ sender: Any) {
+//        let vc = RouteViewController()
+//        vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+//        self.present(vc, animated: true, completion: nil)
+//    }
     
     
     func loadMemberProfile(){
